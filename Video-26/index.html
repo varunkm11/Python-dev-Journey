@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heads or Tails Game</title>
+    <style>
+        body {
+            background: #f5f7fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        h1 {
+            color: #2d8cf0;
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+        .btn {
+            background: #2d8cf0;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 28px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #1766b3;
+        }
+        .result {
+            margin-top: 24px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #27ae60;
+        }
+    </style>
+    <script>
+        function flipCoin() {
+            const result = Math.random() < 0.5 ? "Heads" : "Tails";
+            document.getElementById('result').textContent = `Result: ${result}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Heads or Tails Game</h1>
+        <p>
+            Click the button below to flip a virtual coin.<br>
+            This simple game uses the <code>random</code> module to simulate a fair coin toss.
+        </p>
+        <button class="btn" onclick="flipCoin()">Flip Coin</button>
+        <div class="result" id="result"></div>
+    </div>
+</body>
+</html>
