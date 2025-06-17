@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop - Python</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 32px 40px;
+        }
+        h1 {
+            color: #2d6cdf;
+            margin-bottom: 12px;
+        }
+        h2 {
+            color: #444;
+            margin-top: 32px;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        pre {
+            background: #23272e;
+            color: #f8f8f2;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 1em;
+        }
+        code {
+            color: #e06c75;
+            background: #f3f3f3;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        ul {
+            margin-left: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>For Loop in Python</h1>
+        <p>
+            The <code>for</code> loop in Python is used to iterate over a sequence (like a list, tuple, string, or range).
+            It allows you to execute a block of code multiple times, once for each item in the sequence.
+        </p>
+        <h2>Basic Syntax</h2>
+        <pre><code>for item in sequence:
+    # code to execute
+</code></pre>
+        <h2>Example</h2>
+        <pre><code>fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+</code></pre>
+        <p>
+            This will output:
+        </p>
+        <pre><code>apple
+banana
+cherry
+</code></pre>
+        <h2>How it Works</h2>
+        <ul>
+            <li>The loop picks each <code>item</code> from the <code>sequence</code> one by one.</li>
+            <li>The indented code block runs for each item.</li>
+            <li>After the last item, the loop ends.</li>
+        </ul>
+        <h2>Using <code>range()</code> with For Loop</h2>
+        <pre><code>for i in range(5):
+    print(i)
+</code></pre>
+        <p>
+            This prints numbers from 0 to 4.
+        </p>
+    </div>
