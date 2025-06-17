@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuples in Python</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f6fb;
+        color: #222;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        padding: 32px 40px;
+      }
+      h1 {
+        color: #3a7bd5;
+        margin-bottom: 10px;
+      }
+      h2 {
+        color: #2d3e50;
+        margin-top: 30px;
+      }
+      code,
+      pre {
+        background: #f0f3fa;
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 1em;
+      }
+      ul {
+        margin-left: 20px;
+      }
+      .example {
+        background: #eaf1fb;
+        border-left: 4px solid #3a7bd5;
+        padding: 12px 18px;
+        margin: 18px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tuples in Python</h1>
+      <p>
+        A <strong>tuple</strong> is an immutable, ordered collection of items in
+        Python. Tuples are similar to lists, but unlike lists, they cannot be
+        changed (they are <em>immutable</em>) after creation.
+      </p>
+      <h2>Key Features of Tuples</h2>
+      <ul>
+        <li>
+          Ordered: The items have a defined order and that order will not
+          change.
+        </li>
+        <li>
+          Immutable: You cannot add, remove, or change items after the tuple is
+          created.
+        </li>
+        <li>Allow duplicate values.</li>
+        <li>
+          Can contain elements of different data types (integers, strings,
+          etc.).
+        </li>
+      </ul>
+      <h2>Creating a Tuple</h2>
+      <div class="example">
+        <pre><code>my_tuple = (1, "apple", 3.14)</code></pre>
+      </div>
+      <h2>Accessing Tuple Elements</h2>
+      <div class="example">
+        <pre><code>print(my_tuple[1])  # Output: apple</code></pre>
+      </div>
+      <h2>Why Use Tuples?</h2>
+      <ul>
+        <li>Tuples use less memory than lists.</li>
+        <li>
+          Useful for fixed data collections (like coordinates, RGB colors,
+          etc.).
+        </li>
+        <li>Can be used as keys in dictionaries (lists cannot).</li>
+      </ul>
+      </div>
+    </div>
+  </body>
+</html>
