@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Function - Python</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            background: #fff;
+            margin: 40px auto;
+            padding: 32px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #3a7afe;
+            margin-bottom: 16px;
+            font-size: 2.2rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        code {
+            background: #f0f2f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 1rem;
+            color: #d6336c;
+        }
+        .example {
+            background: #f9fafc;
+            border-left: 4px solid #3a7afe;
+            padding: 16px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Python <code>range()</code> Function</h1>
+        <p>
+            The <code>range()</code> function in Python is used to generate a sequence of numbers. 
+            It's commonly used for looping a specific number of times in <code>for</code> loops.
+        </p>
+        <div class="example">
+            <strong>Example:</strong>
+            <pre><code>for i in range(5):
+    print(i)
+# Output: 0 1 2 3 4</code></pre>
+        </div>
+        <p>
+            You can specify a start, stop, and step value:<br>
+            <code>range(start, stop, step)</code>
+        </p>
+        <div class="example">
+            <strong>Example with start and step:</strong>
+            <pre><code>for i in range(2, 10, 2):
+    print(i)
+# Output: 2 4 6 8</code></pre>
+        </div>
+    </div>
+</body>
