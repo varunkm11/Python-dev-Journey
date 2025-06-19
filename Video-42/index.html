@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break Continue and Pass - Python</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px 40px;
+        }
+        h1 {
+            color: #2d6cdf;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        h2 {
+            color: #1a4a8a;
+            margin-top: 32px;
+        }
+        pre {
+            background: #f0f4fa;
+            padding: 14px 18px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 1em;
+        }
+        .desc {
+            margin-bottom: 18px;
+        }
+        ul {
+            margin-left: 24px;
+        }
+        .keyword {
+            color: #d6336c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Break, Continue, and Pass in Python</h1>
+        <p class="desc">
+            Python provides <span class="keyword">break</span>, <span class="keyword">continue</span>, and <span class="keyword">pass</span> statements to control the flow of loops and code blocks. Understanding these statements helps you write more flexible and readable code.
+        </p>
+        
+        <h2>1. <span class="keyword">break</span></h2>
+        <p>
+            The <span class="keyword">break</span> statement is used to exit a loop prematurely when a certain condition is met.
+        </p>
+        <pre>
+for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)
+# Output: 1 2 3 4
+        </pre>
+
+        <h2>2. <span class="keyword">continue</span></h2>
+        <p>
+            The <span class="keyword">continue</span> statement skips the current iteration and moves to the next one.
+        </p>
+        <pre>
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+# Output: 1 2 4 5
+        </pre>
+
+        <h2>3. <span class="keyword">pass</span></h2>
+        <p>
+            The <span class="keyword">pass</span> statement is a placeholder that does nothing. It is useful when a statement is syntactically required but you do not want any code to execute.
+        </p>
+        <pre>
+for i in range(3):
+    pass  # TODO: implement later
+        </pre>
+
+        <h2>Summary</h2>
+        <ul>
+            <li><span class="keyword">break</span>: Exit the loop immediately.</li>
+            <li><span class="keyword">continue</span>: Skip to the next iteration.</li>
+            <li><span class="keyword">pass</span>: Do nothing (placeholder).</li>
+        </ul>
+    </div>
