@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Dictionaries - Complete Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .section {
+            padding: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: #4a5568;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+        }
+
+        .section h3 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin: 25px 0 15px 0;
+        }
+
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            border-left: 4px solid #667eea;
+        }
+
+        .code-inline {
+            background: #edf2f7;
+            color: #e53e3e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .highlight-box {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #38b2ac;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+
+        .feature-card h4 {
+            color: #495057;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .output {
+            background: #f1f5f9;
+            color: #334155;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin-top: 10px;
+            border-left: 3px solid #10b981;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐍 Python Dictionaries</h1>
+            <p>Your Complete Guide to Mastering Dictionary Data Structures</p>
+        </div>
+
+        <div class="content">
+            <!-- Introduction Section -->
+            <div class="section">
+                <h2>📚 What are Python Dictionaries?</h2>
+                <p>Dictionaries in Python are versatile data structures used to store data values in <span class="code-inline">key:value</span> pairs. A dictionary is a collection which is <strong>ordered</strong> (as of Python 3.7+), <strong>changeable</strong>, and does <strong>not allow duplicate keys</strong>.</p>
+                
+                <div class="highlight-box">
+                    <h3>🔑 Key Characteristics:</h3>
+                    <ul>
+                        <li><strong>Ordered:</strong> Items maintain their insertion order</li>
+                        <li><strong>Changeable:</strong> You can modify, add, or remove items</li>
+                        <li><strong>No Duplicates:</strong> Keys must be unique</li>
+                        <li><strong>Fast Lookups:</strong> O(1) average time complexity for access</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Creating Dictionaries Section -->
+            <div class="section">
+                <h2>🛠️ Creating Dictionaries</h2>
+                
+                <h3>Method 1: Using Curly Braces</h3>
+                <div class="code-block">
+# Empty dictionary
+my_dict = {}
+
+# Dictionary with initial values
+student = {
+    "name": "Alice",
+    "age": 22,
+    "grade": "A",
+    "subjects": ["Math", "Physics", "Chemistry"]
+}
+</div>
+
+                <h3>Method 2: Using dict() Constructor</h3>
+                <div class="code-block">
+# Empty dictionary
+my_dict = dict()
+
+# Dictionary with initial values
+student = dict(
+    name="Alice",
+    age=22,
+    grade="A"
+)
+</div>
+
+                <h3>Method 3: From Lists of Tuples</h3>
+                <div class="code-block">
+# Creating from list of tuples
+items = [("name", "Bob"), ("age", 25), ("city", "New York")]
+person = dict(items)
+print(person)
+</div>
+                <div class="output">{'name': 'Bob', 'age': 25, 'city': 'New York'}</div>
+            </div>
+
+            <!-- Accessing Elements Section -->
+            <div class="section">
+                <h2>🔍 Accessing Dictionary Elements</h2>
+                
+                <div class="code-block">
+student = {
+    "name": "Alice",
+    "age": 22,
+    "grade": "A",
+    "subjects": ["Math", "Physics"]
+}
+
+# Method 1: Using square brackets
+print(student["name"])          # Alice
+print(student["subjects"][0])   # Math
+
+# Method 2: Using get() method (safer)
+print(student.get("name"))      # Alice
+print(student.get("phone"))     # None (no error)
+print(student.get("phone", "Not available"))  # Not available
+</div>
+
+                <div class="highlight-box">
+                    <h3>💡 Pro Tip:</h3>
+                    <p>Use <span class="code-inline">get()</span> method to avoid KeyError when accessing non-existent keys. You can also provide a default value as the second parameter.</p>
+                </div>
+            </div>
+
+            <!-- Modifying Dictionaries Section -->
+            <div class="section">
+                <h2>✏️ Modifying Dictionaries</h2>
+                
+                <h3>Adding and Updating Items</h3>
+                <div class="code-block">
+student = {"name": "Alice", "age": 22}
+
+# Adding new items
+student["grade"] = "A"
+student["subjects"] = ["Math", "Physics"]
+
+# Updating existing items
+student["age"] = 23
+
+# Using update() method
+student.update({"city": "Boston", "year": 2024})
+
+print(student)
+</div>
+                <div class="output">{'name': 'Alice', 'age': 23, 'grade': 'A', 'subjects': ['Math', 'Physics'], 'city': 'Boston', 'year': 2024}</div>
+
+                <h3>Removing Items</h3>
+                <div class="code-block">
+student = {"name": "Alice", "age": 22, "grade": "A", "city": "Boston"}
+
+# Method 1: del statement
+del student["city"]
+
+# Method 2: pop() method (returns the value)
+age = student.pop("age")
+print(f"Removed age: {age}")
+
+# Method 3: popitem() (removes last inserted item)
+last_item = student.popitem()
+print(f"Last item removed: {last_item}")
+
+# Method 4: clear() (removes all items)
+# student.clear()
+</div>
+            </div>
+
+            <!-- Dictionary Methods Section -->
+            <div class="section">
+                <h2>🧰 Essential Dictionary Methods</h2>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>keys()</h4>
+                        <p>Returns all keys in the dictionary</p>
+                        <div class="code-block">
+keys = student.keys()
+print(list(keys))
+</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>values()</h4>
+                        <p>Returns all values in the dictionary</p>
+                        <div class="code-block">
+values = student.values()
+print(list(values))
+</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>items()</h4>
+                        <p>Returns key-value pairs as tuples</p>
+                        <div class="code-block">
+items = student.items()
+print(list(items))
+</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>copy()</h4>
+                        <p>Creates a shallow copy of the dictionary</p>
+                        <div class="code-block">
+student_copy = student.copy()
+</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Iterating Section -->
+            <div class="section">
+                <h2>🔄 Iterating Through Dictionaries</h2>
+                
+                <div class="code-block">
+student = {"name": "Alice", "age": 22, "grade": "A"}
+
+# Iterating through keys
+print("Keys:")
+for key in student:
+    print(key)
+
+# Iterating through values
+print("\nValues:")
+for value in student.values():
+    print(value)
+
+# Iterating through key-value pairs
+print("\nKey-Value pairs:")
+for key, value in student.items():
+    print(f"{key}: {value}")
+</div>
+                <div class="output">Keys:
+name
+age
+grade
+
+Values:
+Alice
+22
+A
+
+Key-Value pairs:
+name: Alice
+age: 22
+grade: A</div>
+            </div>
+
+            <!-- Dictionary Comprehensions Section -->
+            <div class="section">
+                <h2>🚀 Dictionary Comprehensions</h2>
+                
+                <p>Dictionary comprehensions provide a concise way to create dictionaries:</p>
+                
+                <div class="code-block">
+# Basic syntax: {key_expression: value_expression for item in iterable}
+
+# Example 1: Square numbers
+squares = {x: x**2 for x in range(1, 6)}
+print(squares)
+
+# Example 2: Filter even numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_squares = {x: x**2 for x in numbers if x % 2 == 0}
+print(even_squares)
+
+# Example 3: String manipulation
+words = ["hello", "world", "python", "dictionaries"]
+word_lengths = {word: len(word) for word in words}
+print(word_lengths)
+</div>
+                <div class="output">{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
+{'hello': 5, 'world': 5, 'python': 6, 'dictionaries': 12}</div>
+            </div>
+
+            <!-- Nested Dictionaries Section -->
+            <div class="section">
+                <h2>🏗️ Nested Dictionaries</h2>
+                
+                <p>Dictionaries can contain other dictionaries, creating complex data structures:</p>
+                
+                <div class="code-block">
+# Company with multiple employees
+company = {
+    "employees": {
+        "emp001": {
+            "name": "Alice Johnson",
+            "position": "Software Engineer",
+            "salary": 75000,
+            "skills": ["Python", "JavaScript", "SQL"]
+        },
+        "emp002": {
+            "name": "Bob Smith",
+            "position": "Data Scientist",
+            "salary": 80000,
+            "skills": ["Python", "R", "Machine Learning"]
+        }
+    },
+    "company_info": {
+        "name": "Tech Solutions Inc.",
+        "founded": 2010,
+        "location": "San Francisco"
+    }
+}
+
+# Accessing nested data
+print(company["employees"]["emp001"]["name"])
+print(company["company_info"]["name"])
+</div>
+                <div class="output">Alice Johnson
+Tech Solutions Inc.</div>
+            </div>
+
+            <!-- Practical Examples Section -->
+            <div class="section">
+                <h2>💡 Practical Examples</h2>
+                
+                <h3>Example 1: Word Frequency Counter</h3>
+                <div class="code-block">
+def count_words(text):
+    words = text.lower().split()
+    word_count = {}
+    
+    for word in words:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    
+    return word_count
+
+text = "python is great python is powerful python is versatile"
+result = count_words(text)
+print(result)
+</div>
+                <div class="output">{'python': 3, 'is': 3, 'great': 1, 'powerful': 1, 'versatile': 1}</div>
+
+                <h3>Example 2: Student Grade Manager</h3>
+                <div class="code-block">
+class GradeManager:
+    def __init__(self):
+        self.students = {}
+    
+    def add_student(self, name, grades):
+        self.students[name] = grades
+    
+    def get_average(self, name):
+        if name in self.students:
+            grades = self.students[name]
+            return sum(grades) / len(grades)
+        return None
+    
+    def get_top_student(self):
+        if not self.students:
+            return None
+        
+        top_student = max(self.students.items(), 
+                         key=lambda x: sum(x[1]) / len(x[1]))
+        return top_student[0]
+
+# Usage
+gm = GradeManager()
+gm.add_student("Alice", [85, 92, 78, 96])
+gm.add_student("Bob", [76, 88, 92, 85])
+
+print(f"Alice's average: {gm.get_average('Alice'):.2f}")
+print(f"Top student: {gm.get_top_student()}")
+</div>
+            </div>
+
+            <!-- Best Practices Section -->
+            <div class="section">
+                <h2>✨ Best Practices & Tips</h2>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🔐 Use get() for Safe Access</h4>
+                        <p>Always use <span class="code-inline">dict.get(key, default)</span> instead of <span class="code-inline">dict[key]</span> when the key might not exist.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>🎯 Choose Meaningful Keys</h4>
+                        <p>Use descriptive, consistent key names. Prefer strings over numbers for better readability.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>🔄 Use Dictionary Comprehensions</h4>
+                        <p>They're more readable and often faster than traditional loops for creating dictionaries.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>📊 Consider defaultdict</h4>
+                        <p>From collections module, automatically creates missing values with a default factory.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🚨 Common Pitfalls to Avoid:</h3>
+                    <ul>
+                        <li>Don't modify a dictionary while iterating over it</li>
+                        <li>Remember that only immutable objects can be keys</li>
+                        <li>Be careful with shallow vs deep copying for nested dictionaries</li>
+                        <li>Don't assume key order in older Python versions (&lt; 3.7)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
